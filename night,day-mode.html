@@ -1,45 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        #web{
-            color:blue;
-            font-weight: bold;
-            text-decoration: underline;
-        }
-        .js{
-            font-weight: bold;
-            color:brown;
-        }
-    </style>
+   <script>
+       var links={
+           setcolor:function(color){
+        var alist=document.querySelectorAll('a')
+               var i=0;
+               while(i<alist.length){
+                   alist[i].style.color=color;
+                   i=i+1;
+               }
+       }
+    }
+      var target=document.querySelector('body')
+
+      
+       var body={
+        setcolor:function (color){
+        document.querySelector('body').style.color=color;
+       },
+       setbackgroundcolor:function(color){
+        document.querySelector('body').style.backgroundColor=color;
+       }
+    }  
+      
+       function nightday(self){
+           
+           
+           if(self.value==="night"){
+               body.setbackgroundcolor('black');
+               body.setcolor('white');
+               self.value='day';
+
+              links.setcolor('powderblue');
+               
+           }else{
+               body.setbackgroundcolor('white');
+               body.setcolor('black');
+               self.value='night';
+
+              links.setcolor('blue');
+               }
+           }
+        
+    
+   </script>
+   
 </head>
 <body>
-    <h1 id=web>WEB</h1>
-    <input type="button" value="night" onclick="
-    document.querySelector('body').style.backgroundColor='black'
-    document.querySelector('body').style.color='white';
+    <h1><a href="">Javascript</a></h1>
+    <input type="button" id="" value="night" onclick="
+    nightday(this);
     ">
-    <input type="button" value="day" onclick="
-    document.querySelector('body').style.backgroundColor='white'
-    document.querySelector('body').style.Color='black';
-">
-    <input type="button"  value="night" onclick="
-    if(document.querySelector('body').dataset.mode ==='day'){
-       document.querySelector('body').style.backgroundColor='black';
-       document.querySelector('body').style.color='white';
-       document.querySelector('body').dataset.mode ='night';
-       this.value='day';
-    }else{
-       document.querySelector('body').style.backgroundColor='white';
-       document.querySelector('body').style.color='black';
-       document.querySelector('body').dataset.mode ='day';
-       this.value='night';
-    }
-    ">
-    <h1 class=js>Javascript</h1>
-    <p>자바스크립트</p>
+    <p>Javascript</p>
 </body>
 </html>
